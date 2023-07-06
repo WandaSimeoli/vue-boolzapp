@@ -7,7 +7,6 @@
 .my-container {
     max-width: 1170px;
     margin: 0 auto;
-    min-height: 100px;
 }
 header {
     height: 100px;
@@ -16,9 +15,28 @@ main {
     height: calc(100vh - 100px);
 }
 .debug {
-    min-height: 50px;
+    min-height: 20px;
     border: 1px dashed black;
 }
 .bg-image {
     background-image: url(/img/mine.jpg);
+}
+.w-img {
+    width: 10%;
+}
+nav {
+    position: relative;
+}
+.p-r {
+    position: relative;
+}
+.p-a {
+    position: absolute;
+    top: 40%;
+    left: 20px;
+}
+footer  {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
