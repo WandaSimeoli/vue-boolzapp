@@ -7,7 +7,6 @@
 .my-container {
     max-width: 1170px;
     margin: 0 auto;
-    background-image: url(./img/mine.jpg);
     min-height: 100px;
 }
 header {
@@ -18,5 +17,8 @@ main {
 }
 .debug {
     min-height: 50px;
-    border: 1px solid black;
+    border: 1px dashed black;
+}
+.bg-image {
+    background-image: url(/img/mine.jpg);
 }
