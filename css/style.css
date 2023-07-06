@@ -4,7 +4,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container {
+.my-container {
     max-width: 1170px;
     margin: 0 auto;
+    background-image: url(./img/mine.jpg);
+    min-height: 100px;
+}
+header {
+    height: 100px;
+}
+main {
+    height: calc(100vh - 100px);
+}
+.debug {
+    min-height: 50px;
+    border: 1px solid black;
 }
