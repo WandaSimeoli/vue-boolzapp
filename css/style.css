@@ -12,10 +12,12 @@ header {
     height: 100px;
 }
 main {
-    height: calc(100vh - 100px);
+    height: 100vh;
+}
+.avatar {
+    width: 15%;
 }
 .debug {
-    min-height: 20px;
     border: 1px dashed black;
 }
 .bg-image {
@@ -23,6 +25,9 @@ main {
 }
 .w-img {
     width: 10%;
+}
+.ov-fl {
+    overflow-y: auto;
 }
 nav {
     position: relative;

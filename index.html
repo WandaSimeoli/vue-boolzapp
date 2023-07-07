@@ -11,8 +11,8 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <!-- <div id="app"><h1>{{ message }} </h1> -->
-    <!--  -->
+     <div id="app">
+    <!--  Mailstone 1 : Markup statico -->
     <header class="bg-success debug">
 
     </header> 
@@ -43,11 +43,12 @@
                             <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="">
                             <i class="fa-solid fa-magnifying-glass p-a lens text-body-tertiary"></i>
                         </nav>
-                        <div class="row flex-column debug bg-white g-0">
-                            <div class="col contacts w-100 d-flex flex-grow-1 debug">
-                                <img src="./img/avatar_1.jpg" class="w-25 rounded-circle mx-2" alt="">
+                        <!-- Mailstone 1: visualizzazione dinamica della lista -->
+                        <div class="row flex-column debug bg-white g-0 ov-fl w-100">
+                            <div class="col contacts d-flex flex-grow-1 debug py-2" v-for="(singleContact, i) in contacts">
+                                <img :src="singleContact.avatar" class=" avatar rounded-circle mx-2" :alt="singleContact.avatar">
                                 <div class="p-r">
-                                    <div class="name">Michele</div>
+                                    <div class="name">{{singleContact.name}}</div>
                                     <div class="last-message text-body-tertiary">Ultimo messaggio inviato</div>
                                     <div class="text-body-tertiary hour p-a">12:00</div>
                                 </div>
@@ -90,7 +91,7 @@
         </div>
     </main>
    
-<!-- </div>  -->
+</div>
     <script type="text/javascript" src="./js/script.js"></script>
 </body> 
 </body>
