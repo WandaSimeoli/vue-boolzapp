@@ -3,6 +3,7 @@ console.log(Vue);
 createApp({
 data() {
     return {
+         currentIndex : 0,
         contacts: [
             {
             name: 'Michele',
@@ -165,7 +166,13 @@ data() {
             }
             ],
             }
-            ]
+            ],
     }
-}
+},
+methods :{
+    setIndexContact: function(position) {
+        this.currentIndex = position;
+        return this.currentIndex
+    }
+},
 }).mount('#app')

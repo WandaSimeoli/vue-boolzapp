@@ -71,16 +71,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row flex-column">
-                        <div class="col-4 send p-r">
-                           Messaggio inviato
+                    <!-- Visualizzazione dinamica dei messaggi -->
+                    <div class="d-flex flex-column">
+                    <div v-for="(singleMessage, index) in contacts[currentIndex].messages" 
+                    :class="(contacts[currentIndex].messages[index].status =='sent') ?'sent':'received'">
+                           {{contacts[currentIndex].messages[index].message}}
                            <span class="text-body-tertiary p-a hour-2">16:00</span>
-                        </div>
-                        <div class="col-4 received p-r">
-                            Messaggio ricevuto
-                            <span class="text-body-tertiary p-a hour-2">16:30</span>
-                        </div>
                     </div>
+                </div>
                     <footer class="d-flex debug bg-body-tertiary w-100 p-2 align-items-center">
                         <i class="fa-regular fa-face-smile text-body-tertiary"></i>
                         <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Scrivi un messaggio" aria-label="">
