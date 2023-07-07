@@ -169,10 +169,4 @@ data() {
             ],
     }
 },
-methods :{
-    setIndexContact: function(position) {
-        this.currentIndex = position;
-        return this.currentIndex
-    }
-},
 }).mount('#app')
