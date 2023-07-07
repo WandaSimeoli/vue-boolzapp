@@ -4,6 +4,7 @@ createApp({
 data() {
     return {
          currentIndex : 0,
+         newMessage : '',
         contacts: [
             {
             name: 'Michele',
@@ -169,4 +170,27 @@ data() {
             ],
     }
 },
+methods: {
+    //  Mailstone 3: aggiunta di un messaggio dall'utente 
+    add(index) {
+        this.contacts[index].messages.push({
+          message: this.newMessage,
+          status:'sent'
+          });
+        this.newMessage =''
+        //   Mailstone 3: messaggio automatico di risposta 
+        setTimeout(
+            ()=> {
+                let replyMessage = {
+                    date: '10/01/2020 15:51:00',
+                    message: "Ok",
+                    status: 'received'
+                };
+                this.contacts[index].messages.push(replyMessage);
+
+            },1000
+        );
+    },
+
+  }
 }).mount('#app')

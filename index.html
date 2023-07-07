@@ -18,12 +18,12 @@
     </header> 
    
     <main class="bg-secondary-subtle debug">
-        <div class="my-container debug"> 
-            <div class="row debug">
+        <div class="my-container bg-secondary-subtle debug"> 
+            <div class="row  debug">
                 <div class="col-4 debug">
-                    <div class="row debug">
-                        <div class="col debug">
-                            <img src="./img/avatar_io.jpg" class="w-50 rounded-circle" alt="profile_img">
+                    <div class="row negative debug">
+                        <div class="col g-1 debug">
+                            <img src="./img/avatar_io.jpg" class="w-50 rounded-circle ms-3" alt="profile_img">
                             <span class="fs-4">Sofia</span>
                         </div>
                         <div class="col debug text-end pt-3">
@@ -42,9 +42,9 @@
                             <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="">
                             <i class="fa-solid fa-magnifying-glass p-a lens text-body-tertiary"></i>
                         </nav>
-                        <!-- Mailstone 1: visualizzazione dinamica della lista -->
-                        <div class="row flex-column debug bg-white g-0 ov-fl w-100"  @click="activeElement(i)">
-                              <!-- Mailstone 2: Click sul contatto per mostrare la conversazione-->
+                         <!-- Mailstone 2: Click sul contatto per mostrare la conversazione :( -->
+                        <div class="row flex-column debug bg-white g-0 w-100"  @click="activeElement(i)">
+                               <!-- Mailstone 1: visualizzazione dinamica della lista -->
                             <div class="col contacts d-flex flex-grow-1 debug py-2" v-for="(singleContact, i) in contacts" 
                             :class="{'active': i == currentIndex}">
                                 <img :src="singleContact.avatar" class=" avatar rounded-circle mx-2" :alt="singleContact.avatar">
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Mailstone:2 Visualizzazione dinamica dei messaggi -->
+                    <!-- Mailstone:2 Visualizzazione dinamica dei messaggi-->
                     <div class="d-flex flex-column">
                     <div v-for="(singleMessage, index) in contacts[currentIndex].messages" 
                     :class="(contacts[currentIndex].messages[index].status =='sent') ?'sent':'received'">
@@ -80,18 +80,11 @@
                            <span class="text-body-tertiary p-a hour-2">16:00</span>
                     </div>
                 </div>
-                    <footer class="row debug bg-body-tertiary g-0 w-100 p-2 align-items-center">
-                        <div class="col-1">
+                    <footer class="d-flex debug bg-body-tertiary w-100 p-2 align-items-center">
                         <i class="fa-regular fa-face-smile text-body-tertiary"></i>
-                        </div>
-                        <div class="col">
-                        <form action="" @submit.prevent="add()">
-                        <input class="form-control w-100 me-2  px-3" type="search" placeholder="Scrivi un messaggio" aria-label="">
-                        </form>
-                            </div>
-                        <div class="col-1">
-                        <i class="fa-solid fa-microphone text-body-tertiary ms-3"></i>
-                            </div>
+                        <!-- Mailstone 3: aggiunta di un messaggio dall'utente -->
+                        <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Scrivi un messaggio" aria-label="" v-model="newMessage" @keydown.enter="add(currentIndex)">
+                        <i class="fa-solid fa-microphone text-body-tertiary px-2"></i>
                     </footer>
                 </div>
             </div>
