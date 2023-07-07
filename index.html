@@ -16,7 +16,7 @@
     <header class="bg-success debug">
 
     </header> 
-    <!--  -->
+    <!--  6:36 -->
    
     <main class="bg-secondary-subtle debug">
         <div class="my-container debug"> 
@@ -41,32 +41,43 @@
                         </div> 
                         <nav class="navbar bg-body-tertiary w-100">
                             <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="">
-                            <i class="fa-solid fa-magnifying-glass p-a text-body-tertiary"></i>
+                            <i class="fa-solid fa-magnifying-glass p-a lens text-body-tertiary"></i>
                         </nav>
-                        <ul>
-                            <li class="d-flex py-2 debug">
+                        <div class="row flex-column debug bg-white g-0">
+                            <div class="col contacts w-100 d-flex flex-grow-1 debug">
                                 <img src="./img/avatar_1.jpg" class="w-25 rounded-circle mx-2" alt="">
-                                <div>
-                                <div class="name">Michele</div>
-                                <div class="last-message text-body-tertiary">Ultimo messaggio inviato</div>
+                                <div class="p-r">
+                                    <div class="name">Michele</div>
+                                    <div class="last-message text-body-tertiary">Ultimo messaggio inviato</div>
+                                    <div class="text-body-tertiary hour p-a">12:00</div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col debug bg-image p-r">
+                 <div class="col debug bg-image p-r">
                     <div class=" row debug bg-secondary-subtle debug">
-                        <div class="col debug d-flex py-2">
+                         <div class="col debug d-flex py-2">
                             <img src="./img/avatar_1.jpg" class=" w-img rounded-circle mx-2" alt="">
                             <div>
                             <div class="name">Michele</div>
-                            <div class="last-message text-body-tertiary">Ultimo accesso</div>
+                            <div class="last-message text-body-tertiary">Ultimo accesso oggi alle 12:00</div>
                         </div>
-                        <div class="col debug text-end p-2">
-                            <i class="fa-solid fa-magnifying-glass text-body-tertiary mx-2"></i>
-                            <i class="fa-solid fa-paperclip text-body-tertiary mx-2"></i>
-                            <i class="fa-solid fa-ellipsis-vertical text-body-tertiary px-1 mx-2"></i>
+                            <div class="col debug text-end p-2">
+                                <i class="fa-solid fa-magnifying-glass text-body-tertiary mx-2"></i>
+                                <i class="fa-solid fa-paperclip text-body-tertiary mx-2"></i>
+                                <i class="fa-solid fa-ellipsis-vertical text-body-tertiary px-1 mx-2"></i>
+                            </div>
                         </div>
+                    </div>
+                    <div class="row flex-column">
+                        <div class="col-4 send p-r">
+                           Messaggio inviato
+                           <span class="text-body-tertiary p-a hour-2">16:00</span>
+                        </div>
+                        <div class="col-4 received p-r">
+                            Messaggio ricevuto
+                            <span class="text-body-tertiary p-a hour-2">16:30</span>
                         </div>
                     </div>
                     <footer class="d-flex debug bg-body-tertiary w-100 p-2 align-items-center">
