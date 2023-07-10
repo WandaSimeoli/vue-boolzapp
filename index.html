@@ -12,8 +12,8 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
+
     <!--  Mailstone 1 : Markup statico -->
-   
     <main class="bg-secondary-subtle debug">
         <div class="my-container bg-secondary-subtle debug"> 
             <div class="row gray-border debug">
@@ -36,11 +36,14 @@
                             </div>
                         </div> 
                         <nav class="navbar bg-body-tertiary w-100">
-                            <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="">
+                            <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Cerca o inizia una nuova chat" aria-label=""
+                            v-model="search" @keyup.enter="filteredContacts()">
                             <i class="fa-solid fa-magnifying-glass p-a lens text-body-tertiary"></i>
                         </nav>
+
                          <!-- Mailstone 2: Click sul contatto per mostrare la conversazione -->
-                        <div class="row flex-column debug bg-white g-0 w-100 " >
+                        <div class="row flex-column debug bg-white g-0 w-100" >
+                            
                                <!-- Mailstone 1: visualizzazione dinamica della lista -->
                             <div class="col gray-border d-flex flex-grow-1 debug py-2" 
                             @click="activeElement(i)"
@@ -71,6 +74,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Mailstone:2 Visualizzazione dinamica dei messaggi-->
                     <div class="d-flex flex-column">
                     <div v-for="(singleMessage, index) in contacts[currentIndex].messages" 
@@ -81,6 +85,7 @@
                 </div>
                     <footer class="d-flex debug bg-body-tertiary w-100 p-2 align-items-center">
                         <i class="fa-regular fa-face-smile text-body-tertiary"></i>
+                        
                         <!-- Mailstone 3: aggiunta di un messaggio dall'utente -->
                         <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Scrivi un messaggio" aria-label="" v-model="newMessage" 
                         @keyup.enter="add(currentIndex)">

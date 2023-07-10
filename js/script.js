@@ -5,6 +5,7 @@ data() {
     return {
          currentIndex : 0,
          newMessage : '',
+         search :'',
         contacts: [
             {
             name: 'Michele',
@@ -176,6 +177,7 @@ methods: {
     activeElement(index) {
         this.currentIndex = index;
     },
+
     //  Mailstone 3: aggiunta di un messaggio dall'utente 
     add(index) {
         this.contacts[index].messages.push({
@@ -184,6 +186,7 @@ methods: {
           status:'sent'
           });
         this.newMessage =''
+        
         //   Mailstone 3: messaggio automatico di risposta 
         setTimeout(
             ()=> {
@@ -197,6 +200,8 @@ methods: {
             },1000
         );
     },
-
-  }
+    filteredContacts() {
+       
+},
+}
 }).mount('#app')
