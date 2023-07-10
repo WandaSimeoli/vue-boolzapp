@@ -19,7 +19,7 @@
             <div class="row gray-border debug">
                 <div class="col-4 debug ">
                     <div class="row gray-border debug">
-                        <div class="col debug w-100">
+                        <div class="col debug w-100 gx-5">
                             <img src="./img/avatar_io.jpg" class="w-50 rounded-circle ms-3" alt="profile_img">
                             <span class="fs-4">Sofia</span>
                         </div>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                 <div class="col debug bg-image p-r">
+                 <div class="col debug bg-image p-r ">
                     <div class=" row debug gray-border bg-secondary-subtle">
                          <div class="col debug d-flex py-2">
                             <img :src="filteredContacts[currentIndex].avatar" class=" w-img rounded-circle mx-2" alt="">
@@ -80,7 +80,7 @@
                     <div v-for="(singleMessage, index) in filteredContacts[currentIndex].messages" 
                     :class="(filteredContacts[currentIndex].messages[index].status =='sent') ?'sent':'received'">
                            {{filteredContacts[currentIndex].messages[index].message}}
-                           <span class="text-body-tertiary p-a hour-2">{{singleMessage.date}}</span>
+                           <span class="text-body-tertiary p-a hour-2">{{filteredContacts[currentIndex].messages[index].date}}</span>
                     </div>
                 </div>
                     <footer class="d-flex debug bg-body-tertiary w-100 p-2 align-items-center">
