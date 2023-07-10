@@ -200,8 +200,14 @@ methods: {
             },1000
         );
     },
-    filteredContacts() {
-       
-},
-}
+    },
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(
+                element => {
+                    return element.name.toLocaleLowerCase().includes(this.search.toLowerCase());
+                }
+            );
+        }
+    }
 }).mount('#app')

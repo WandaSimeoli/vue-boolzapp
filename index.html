@@ -17,9 +17,9 @@
     <main class="bg-secondary-subtle debug">
         <div class="my-container bg-secondary-subtle debug"> 
             <div class="row gray-border debug">
-                <div class="col-4 debug">
+                <div class="col-4 debug ">
                     <div class="row gray-border debug">
-                        <div class="col debug">
+                        <div class="col debug w-100">
                             <img src="./img/avatar_io.jpg" class="w-50 rounded-circle ms-3" alt="profile_img">
                             <span class="fs-4">Sofia</span>
                         </div>
@@ -41,13 +41,13 @@
                             <i class="fa-solid fa-magnifying-glass p-a lens text-body-tertiary"></i>
                         </nav>
 
-                         <!-- Mailstone 2: Click sul contatto per mostrare la conversazione -->
-                        <div class="row flex-column debug bg-white g-0 w-100" >
+                          <!-- Mailstone 1: visualizzazione dinamica della lista contatti-->
+                        <div class="row flex-column debug bg-white g-0" >
                             
-                               <!-- Mailstone 1: visualizzazione dinamica della lista -->
-                            <div class="col gray-border d-flex flex-grow-1 debug py-2" 
+                            <!-- Mailstone 2: Click sul contatto per mostrare la conversazione -->
+                            <div class="col gray-border d-flex debug py-2 " 
                             @click="activeElement(i)"
-                            v-for="(singleContact, i) in contacts" 
+                            v-for="(singleContact, i) in filteredContacts" 
                             :class="{'active': i == currentIndex}">
                                 <img :src="singleContact.avatar" class=" avatar rounded-circle mx-2" :alt="singleContact.avatar">
                                 <div class="p-r">
@@ -62,9 +62,9 @@
                  <div class="col debug bg-image p-r">
                     <div class=" row debug gray-border bg-secondary-subtle">
                          <div class="col debug d-flex py-2">
-                            <img :src="contacts[currentIndex].avatar" class=" w-img rounded-circle mx-2" alt="">
+                            <img :src="filteredContacts[currentIndex].avatar" class=" w-img rounded-circle mx-2" alt="">
                             <div>
-                            <div class="name">{{contacts[currentIndex].name}}</div>
+                            <div class="name">{{filteredContacts[currentIndex].name}}</div>
                             <div class="last-message text-body-tertiary">Ultimo accesso oggi alle 12:00</div>
                         </div>
                             <div class="col debug text-end p-2">
@@ -77,15 +77,15 @@
 
                     <!-- Mailstone:2 Visualizzazione dinamica dei messaggi-->
                     <div class="d-flex flex-column">
-                    <div v-for="(singleMessage, index) in contacts[currentIndex].messages" 
-                    :class="(contacts[currentIndex].messages[index].status =='sent') ?'sent':'received'">
-                           {{contacts[currentIndex].messages[index].message}}
+                    <div v-for="(singleMessage, index) in filteredContacts[currentIndex].messages" 
+                    :class="(filteredContacts[currentIndex].messages[index].status =='sent') ?'sent':'received'">
+                           {{filteredContacts[currentIndex].messages[index].message}}
                            <span class="text-body-tertiary p-a hour-2">{{singleMessage.date}}</span>
                     </div>
                 </div>
                     <footer class="d-flex debug bg-body-tertiary w-100 p-2 align-items-center">
                         <i class="fa-regular fa-face-smile text-body-tertiary"></i>
-                        
+
                         <!-- Mailstone 3: aggiunta di un messaggio dall'utente -->
                         <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Scrivi un messaggio" aria-label="" v-model="newMessage" 
                         @keyup.enter="add(currentIndex)">
