@@ -171,9 +171,15 @@ data() {
     }
 },
 methods: {
+
+    // Mailstone 2: Click sul contatto per mostrare la conversazione
+    activeElement(index) {
+        this.currentIndex = index;
+    },
     //  Mailstone 3: aggiunta di un messaggio dall'utente 
     add(index) {
         this.contacts[index].messages.push({
+          date: 'oggi',
           message: this.newMessage,
           status:'sent'
           });
@@ -182,7 +188,7 @@ methods: {
         setTimeout(
             ()=> {
                 let replyMessage = {
-                    date: '10/01/2020 15:51:00',
+                    date: 'oggi',
                     message: "Ok",
                     status: 'received'
                 };
