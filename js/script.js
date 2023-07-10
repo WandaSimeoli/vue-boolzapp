@@ -201,11 +201,13 @@ methods: {
         );
     },
     },
+    
+    // Mailstone 4: ricerca utenti
     computed: {
         filteredContacts() {
             return this.contacts.filter(
                 element => {
-                    return element.name.toLocaleLowerCase().includes(this.search.toLowerCase());
+                    return element.name.toLowerCase().includes(this.search.toLowerCase());
                 }
             );
         }
