@@ -3,9 +3,9 @@ console.log(Vue);
 createApp({
 data() {
     return {
-         currentIndex : 0,
-         newMessage : '',
-         search :'',
+         currentIndex : 0, //Indice attivo
+         newMessage : '', //Nuovo messaggio inserito dall'utente
+         search :'', //Ricerca contatti
         contacts: [
             {
             name: 'Michele',
@@ -202,7 +202,7 @@ methods: {
     },
     },
     
-    // Mailstone 4: ricerca utenti
+    // Mailstone 4: ricerca contatti
     computed: {
         filteredContacts() {
             return this.contacts.filter(

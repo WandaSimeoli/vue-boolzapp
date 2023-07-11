@@ -15,11 +15,11 @@
 
     <!--  Mailstone 1 : Markup statico -->
     <main class="bg-secondary-subtle debug">
-        <div class="my-container bg-secondary-subtle debug"> 
-            <div class="row gray-border debug">
-                <div class="col-4 debug ">
+        <div class="my-container debug"> 
+            <div class="row gray-border bg-secondary-subtle debug">
+                <div class="col-4 debug">
                     <div class="row gray-border debug">
-                        <div class="col debug w-100 gx-5">
+                        <div class="col debug">
                             <img src="./img/avatar_io.jpg" class="w-50 rounded-circle ms-3" alt="profile_img">
                             <span class="fs-4">Sofia</span>
                         </div>
@@ -36,7 +36,7 @@
                             </div>
                         </div> 
                         
-                        <!-- Mailstone 4: ricerca utenti -->
+                        <!-- Mailstone 4: ricerca contatti -->
                         <nav class="navbar bg-body-tertiary w-100">
                             <input class="form-control me-2 mx-3 px-4" type="search" placeholder="Cerca o inizia una nuova chat" aria-label=""
                             v-model="search">
@@ -47,7 +47,7 @@
                         <div class="row flex-column debug bg-white g-0" >
                             
                             <!-- Mailstone 2: Click sul contatto per mostrare la conversazione -->
-                            <div class="col gray-border d-flex debug py-2 " 
+                            <div class="col gray-border d-flex debug py-2" 
                             @click="activeElement(i)"
                             v-for="(singleContact, i) in filteredContacts" 
                             :class="{'active': i == currentIndex}">

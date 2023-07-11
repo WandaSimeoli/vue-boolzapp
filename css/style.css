@@ -6,9 +6,10 @@
 }
 .my-container {
     width: 70%;
-    margin: 0 auto;
+    margin: auto;
     height: 200px;
     margin-top: 30px;
+    padding-left: -10px;
 }
 main {
     background: rgb(0,150,136);
